@@ -8,18 +8,26 @@
     <style>
       #banner{
         height:460px; object-fit:cover; width:100%;
+        margin-bottom:16px;
       }
     </style>
     
  </head>
  <body>
+   {% include  'nav.html' %}
+   <img class="img-fluid" id ="banner" src=https://jovian-career-website--kodurisaiharshi.repl.co/static/banner.jpg>
    <div class="container">
       <h1 class="text-center  mt-2 mb-4">{{company_name}}</h1>
-<img class="img-fluid" id ="banner" src=https://jovian-career-website--kodurisaiharshi.repl.co/static/banner.jpg>
-   <h2 class="text-center mt-2 mb-4" > About Jovian Careers </h2>
+ <div class="row" style="margin-bottom:16px">
+ <div class="col-md-6">
    <p class="lead"> 
      At Jovian Careers , we believe that a fulfilling career is the cornerstone of personal and professional growth. We are dedicated to fostering an environment where individuals can thrive and make meaningful contributions. Our company is committed to nurturing talent, encouraging innovation, and providing opportunities for continuous learning. Whether you're just starting your journey or looking to take your career to new heights, we offer a range of diverse roles and a supportive network to help you achieve your goals. Join us and embark on a path that not only shapes your future but also contributes to the collective success of our dynamic team. Your aspirations meet their match at Jovian Careers.
  </p>
+ </div>
+   <div class="d-none d-md-block col-md-6">
+   <img src="/static/people.jpg" style="height:320px; border-radius:4px;">
+   </div>
+ </div>
    <h2 class="text-center  mt-2 mb-4">Job Openings</h2>
    <div>
      {% for job in jobs %}
@@ -27,9 +35,9 @@
      {% endfor %}
      </div>
      <div class="text-center">
-        <button class="btn btn-primary">Contact Us</button>
-       <p class="mt-4"> Copyright 2023, JovianCareers</p>
+        <a href="mailto:hello@joviancareer.co.in?subject=Question%20about%20Job%20Openings&body=My%20Name%3A%20%3Cyour%20name%3E%0D%0AMy%20Questions%3A%20%3CEnter%20your%20question%20here%3E%0D%0A%0D%0A" class="btn btn-primary btn-lg">Contact Us</a>
      </div>
   </div>
+   {% include 'footer.html' %}
  </body>
 </html>
