@@ -39,3 +39,19 @@ def load_job_from_db(id):
             "updated_at"):  # Exclude "created_at" and "updated_at" keys
           job_dict[column_name] = value
       return job_dict
+
+
+def add_application_to_db(id, data):
+  with engine.connect() as conn:
+    stmt = text(
+      "INSERT INTO applications (job_id, full_name, email, linkedin_url, education, work_experience, resume_url) "
+      "VALUES (:job_id, :full_name, :email, :linkedin_url, :education, :work_experience, :resume_url)"
+    ).bindparams(job_id=id,
+                 full_name=data['full_name'],
+                 email=data['email'],
+                 linkedin_url=data['linkedin_url'],
+                 education=data['education'],
+                 work_experience=data['work_experience'],
+                 resume_url=data['resume_url'])
+
+    conn.execute(stmt)
