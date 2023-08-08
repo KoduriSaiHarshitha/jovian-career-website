@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Application Submitted</title>
+    {% include 'bootstrap.html' %}
+</head>
+<<!DOCTYPE html>
+<html>
   <head>
     <title>Application Submitted</title>  
     {% include 'bootstrap.html' %}
@@ -32,6 +38,9 @@
   
       <b>Resume URL</b>
       <div class="mb-2">{{application['resume_url']}}</div>
+      <div class="text-center">
+        <a href="/" class="btn btn-primary">Explore Other Jobs</a> <!-- Add this button -->
+      </div>
     </div>
     {% include 'footer.html' %}
   </body>
